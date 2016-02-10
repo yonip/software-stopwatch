@@ -3,6 +3,18 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.PasswordField?>
 <GridPane fx:controller="sample.Controller"
           xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
+    <GridPane alignment="BASELINE_CENTER" GridPane.columnIndex="0" GridPane.rowIndex="0">
+        <Text GridPane.halignment="RIGHT" text="lap 1  00:00.00" GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="2"/>
+        <Text GridPane.halignment="RIGHT" text="0:00.00" GridPane.columnIndex="0" GridPane.rowIndex="1" GridPane.columnSpan="2"/>
+        <Button GridPane.halignment="LEFT" text="start" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+        <Button GridPane.halignment="right" text="lap" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+    </GridPane>
+    <GridPane GridPane.columnIndex="0" GridPane.rowIndex="1">
+
+    </GridPane>
 </GridPane>
