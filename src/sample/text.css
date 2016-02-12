@@ -1,0 +1,12 @@
+.root {
+    -fx-padding: 0
+}
+
+#top-lap {
+    -fx-font-size: 20;
+    -fx-fill: #888888
+}
+
+#time {
+    -fx-font-size: 70
+}
