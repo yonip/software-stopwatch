@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="300.0" spacing="10.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <VBox prefHeight="200.0" prefWidth="100.0">
+         <children>
+            <TextFlow prefHeight="0.0" prefWidth="260.0" textAlignment="RIGHT">
+               <children>
+                  <Text fx:id="lapNum" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 18;" text="lap 1 " />
+                  <Text fx:id="lapName" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 20; -fx-fill: #aaa;" text="0:00:00" textAlignment="RIGHT" />
+               </children>
+               <padding>
+                  <Insets right="10.0" />
+               </padding>
+            </TextFlow>
+            <TextFlow prefHeight="0.0" prefWidth="260.0" textAlignment="CENTER">
+               <children>
+                  <Text fx:id="time" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 75;" text="0:00:00" textAlignment="RIGHT" />
+               </children>
+            </TextFlow>
+            <HBox prefHeight="71.0" prefWidth="260.0" spacing="15.0">
+               <padding>
+                  <Insets bottom="10.0" top="10.0" />
+               </padding>
+               <children>
+                  <Button fx:id="startStop" mnemonicParsing="false" onAction="#toggleStartStop" prefHeight="100.0" prefWidth="130.0" style="-fx-font-size: 20;" text="START" />
+                  <Button fx:id="lapReset" mnemonicParsing="false" onAction="#lapResetPressed" prefHeight="100.0" prefWidth="130.0" style="-fx-font-size: 20;" text="RESET">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Button>
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+      <ListView prefHeight="185.0" prefWidth="260.0" />
+      <Button fx:id="history" mnemonicParsing="false" prefHeight="26.0" prefWidth="324.0" text="HISTORY" />
+      <Button fx:id="save" mnemonicParsing="false" prefHeight="26.0" prefWidth="260.0" style="-fx-font-size: 23;" text="SAVE" />
+   </children>
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
+</VBox>

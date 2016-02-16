@@ -10,9 +10,9 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("stopwatch-main.fxml"));
         Scene scene = new Scene(root, 300, 500);
-        primaryStage.setTitle("The Galaxy Nexus 4s plus");
+        primaryStage.setTitle("The Galaxy Nexus 4s plus 9001");
         primaryStage.setScene(scene);
         primaryStage.setMaxHeight(500);
         primaryStage.setMaxWidth(300);
