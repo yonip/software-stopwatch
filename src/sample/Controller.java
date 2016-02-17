@@ -1,11 +1,13 @@
 package sample;
 
 import javafx.animation.AnimationTimer;
-import javafx.application.Platform;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.ListView;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.paint.Paint;
@@ -31,9 +33,14 @@ public class Controller implements Initializable {
     @FXML
     private Button save;
     @FXML
-    private volatile Text lapName;
+    private Text lapName;
     @FXML
-    private volatile Text time;
+    private Text lapNum;
+    @FXML
+    private Text time;
+    @FXML
+    private ListView<String> lapList;
+    private ObservableList<String> laps;
 
     private boolean reseted;
     private boolean restarted;
@@ -68,6 +75,8 @@ public class Controller implements Initializable {
         lapReset.setBackground(defaultBackground);
         history.setBackground(defaultBackground);
         save.setBackground(defaultBackground);
+        laps = FXCollections.observableArrayList();
+        lapList.setItems(laps);
         timer = new AnimationTimer() {
 
             @Override
@@ -99,7 +108,7 @@ public class Controller implements Initializable {
                     lapOffset = 0;
                 }
                 time.setText(timeToString((now - timeStarted)+startOffset));
-                lapName.setText(timeToString((now - timeLapped)+lapOffset));
+                lapName.setText(timeToString((now - timeLapped) + lapOffset));
                 lastNow = now;
             }
 
@@ -155,7 +164,8 @@ public class Controller implements Initializable {
         reseted = true;
         time.setText("0:00.00");
         lapName.setText("0:00.00");
-        // clear the list
+        laps.clear();
+        lapNum.setText("lap 1");
         // gray out save
         // gray out this button
     }
@@ -163,5 +173,7 @@ public class Controller implements Initializable {
     private void lap() {
         relapped = true;
         // add things to the list here
+        laps.add(0, lapNum.getText() + "   " + lapName.getText());
+        lapNum.setText("lap "+(laps.size()+1));
     }
 }
