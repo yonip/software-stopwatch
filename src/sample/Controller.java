@@ -5,14 +5,18 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.paint.Paint;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -142,8 +146,11 @@ public class Controller implements Initializable {
         // open the history scene
     }
 
-    public void savePressed(ActionEvent event) {
+    public void savePressed(ActionEvent event) throws IOException {
         // open the save menu
+        Stage s = (Stage) save.getScene().getWindow();
+        s.setScene(new Scene(FXMLLoader.load(getClass().getResource("stopwatch-save.fxml"))));
+        s.show();
     }
 
     private void stop() {

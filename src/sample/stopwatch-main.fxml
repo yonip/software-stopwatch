@@ -44,8 +44,8 @@
          </children>
       </VBox>
       <ListView fx:id="lapList" prefHeight="185.0" prefWidth="260.0" />
-      <Button fx:id="history" mnemonicParsing="false" prefHeight="26.0" prefWidth="324.0" text="HISTORY" />
-      <Button fx:id="save" mnemonicParsing="false" prefHeight="26.0" prefWidth="260.0" style="-fx-font-size: 23;" text="SAVE" />
+      <Button fx:id="history" mnemonicParsing="false" onAction="#historyPressed" prefHeight="26.0" prefWidth="324.0" text="HISTORY" />
+      <Button fx:id="save" mnemonicParsing="false" onAction="#savePressed" prefHeight="26.0" prefWidth="260.0" style="-fx-font-size: 23;" text="SAVE" />
    </children>
    <padding>
       <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />

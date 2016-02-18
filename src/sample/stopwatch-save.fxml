@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="300.0" spacing="10.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.SaveController">
+   <children>
+      <TextFlow prefHeight="44.0" prefWidth="260.0" textAlignment="RIGHT">
+         <children>
+            <Text fx:id="date" strokeType="OUTSIDE" strokeWidth="0.0" text="Date" wrappingWidth="27.65142822265625">
+               <font>
+                  <Font size="43.0" />
+               </font>
+            </Text>
+         </children>
+      </TextFlow>
+      <TextField fx:id="sessionNameIn" prefHeight="0.0" prefWidth="260.0" text="Session name" />
+      <ListView fx:id="lapList" prefHeight="191.0" prefWidth="260.0" />
+      <TextArea fx:id="descriptionIn" prefHeight="147.0" prefWidth="260.0" text="Description" />
+      <Button fx:id="save" mnemonicParsing="false" onAction="#savePressed" prefHeight="65.0" prefWidth="260.0" style="-fx-font-size: 23;" text="SAVE" />
+   </children>
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
+</VBox>

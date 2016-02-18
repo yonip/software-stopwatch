@@ -7,13 +7,16 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class Main extends Application {
+    public static Scene main;
+    public static Scene save;
+    public static Scene hist;
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("stopwatch-main.fxml"));
-        Scene scene = new Scene(root, 300, 500);
+        main = new Scene(FXMLLoader.load(getClass().getResource("stopwatch-main.fxml")));
+        save = new Scene(FXMLLoader.load(getClass().getResource("stopwatch-save.fxml")));
         primaryStage.setTitle("The Galaxy Nexus 4s plus 9001");
-        primaryStage.setScene(scene);
+        primaryStage.setScene(main);
         primaryStage.setMaxHeight(500);
         primaryStage.setMaxWidth(300);
         primaryStage.setMinHeight(500);
