@@ -5,9 +5,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.layout.Background;
@@ -42,9 +40,10 @@ public class Controller implements Initializable {
     private Text lapNum;
     @FXML
     private Text time;
+    protected static String timeText = "";
     @FXML
     private ListView<String> lapList;
-    private ObservableList<String> laps;
+    protected static ObservableList<String> laps;
 
     private boolean reseted;
     private boolean restarted;
@@ -112,6 +111,7 @@ public class Controller implements Initializable {
                     lapOffset = 0;
                 }
                 time.setText(timeToString((now - timeStarted)+startOffset));
+                timeText = time.getText();
                 lapName.setText(timeToString((now - timeLapped) + lapOffset));
                 lastNow = now;
             }
@@ -148,9 +148,8 @@ public class Controller implements Initializable {
 
     public void savePressed(ActionEvent event) throws IOException {
         // open the save menu
-        Stage s = (Stage) save.getScene().getWindow();
-        s.setScene(new Scene(FXMLLoader.load(getClass().getResource("stopwatch-save.fxml"))));
-        s.show();
+        timeText = time.getText();
+        Main.setSave();
     }
 
     private void stop() {
@@ -170,6 +169,7 @@ public class Controller implements Initializable {
     private void reset() {
         reseted = true;
         time.setText("0:00.00");
+        timeText = time.getText();
         lapName.setText("0:00.00");
         laps.clear();
         lapNum.setText("lap 1");
