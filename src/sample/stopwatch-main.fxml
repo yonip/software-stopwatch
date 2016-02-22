@@ -14,7 +14,7 @@
                <children>
                   <Text fx:id="lapNum" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 18;" text="lap 1" />
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 18;" text="  " />
-                  <Text fx:id="lapName" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 20; -fx-fill: #aaa;" text="0:00:00" textAlignment="RIGHT" />
+                  <Text fx:id="lapTime" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 20; -fx-fill: #aaa;" text="0:00:00" textAlignment="RIGHT" />
                </children>
                <padding>
                   <Insets right="10.0" />

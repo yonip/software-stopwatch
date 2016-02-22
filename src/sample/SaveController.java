@@ -19,30 +19,41 @@ import java.util.Date;
 import java.util.ResourceBundle;
 
 public class SaveController implements Initializable {
-    public static final long HUNDRETHS = 10 * 1000000; // from nanos
-    public static final long SECONDS = 100 * HUNDRETHS;
-    public static final long MINUTES = 60 * SECONDS;
-
+    /**
+     * the "default" background for the buttons. A nice light blue color
+     */
     private Background defaultBackground = new Background(new BackgroundFill(Paint.valueOf("#6fa7da"), null, null));
+    /**
+     * the save button. When this button is pressed, {@link #savePressed(ActionEvent)} will be called to save the current
+     * session
+     */
     @FXML
     private Button save;
+    /**
+     * the date of the current session
+     */
     @FXML
     private Text date;
+    /**
+     * the total time elapsed during this session
+     */
     @FXML
     private Text time;
+    /**
+     * the list containing all the laps and their durations
+     */
     @FXML
     private ListView<String> lapList;
+    /**
+     * the TextField where the user will input the name they want to give this session
+     */
     @FXML
     private TextField sessionNameIn;
+    /**
+     * the TextArea where the user will input a description for the current session
+     */
     @FXML
     private TextArea descriptionIn;
-
-    public static synchronized String timeToString(long time) {
-        long minutes = ((time / MINUTES) % 10);
-        long seconds = ((time / SECONDS) % 60);
-        long hund = ((time / HUNDRETHS) % 100);
-        return minutes + ":" + ((seconds < 10) ? "0" : "") + seconds + "." + ((hund < 10) ? "0" : "") + hund;
-    }
 
     /**
      * Called to initialize a controller after its root element has been
@@ -56,22 +67,21 @@ public class SaveController implements Initializable {
     @FXML
     public void initialize(URL location, ResourceBundle resources) {
         save.setBackground(defaultBackground);
-        lapList.setItems(Controller.laps);
-        time.setText(Controller.timeText);
+        lapList.setItems(Controller.laps); // get the laps from the controller for the main menu
+        time.setText(Controller.timeText); // get the time from the controller for the main menu
         Date d = new Date();
-        String dateStr = d.getMonth() + "/" + d.getDay() + "/" + d.getYear();
+        String dateStr = d.getMonth() + "/" + d.getDay() + "/" + d.getYear(); // get the current date
         date.setText(dateStr);
     }
 
+    /**
+     * Method to be called when the "save" button is pressed. <br/>
+     * Currently only switches back to the main screen. In theory here the current session will be saved to the log and
+     * only then will the main screen be reopened
+     * @param event
+     */
     public void savePressed(ActionEvent event) {
         Main.setMain();
-    }
-
-    public void textInput(ActionEvent event) {
-        System.out.println(event);
-        if (event.getSource() != sessionNameIn && event.getSource() != descriptionIn) {
-            return;
-        }
     }
 
 }

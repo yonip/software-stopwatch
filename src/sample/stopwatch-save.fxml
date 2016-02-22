@@ -8,16 +8,25 @@
 
 <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="300.0" spacing="10.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.SaveController">
    <children>
-      <TextFlow prefHeight="44.0" prefWidth="260.0" textAlignment="RIGHT">
+      <HBox prefHeight="100.0" prefWidth="200.0">
          <children>
-            <Text fx:id="date" fill="#9a9a9a" strokeType="OUTSIDE" strokeWidth="0.0" text="5/14/2016" wrappingWidth="27.65142822265625">
+            <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="48.0" prefWidth="49.0" text="⇐">
                <font>
-                  <Font size="40.0" />
+                  <Font size="23.0" />
                </font>
-            </Text>
+            </Button>
+            <TextFlow prefHeight="44.0" prefWidth="260.0" textAlignment="RIGHT">
+               <children>
+                  <Text fx:id="date" fill="#9a9a9a" strokeType="OUTSIDE" strokeWidth="0.0" text="5/14/2016" wrappingWidth="27.65142822265625">
+                     <font>
+                        <Font size="40.0" />
+                     </font>
+                  </Text>
+               </children>
+            </TextFlow>
          </children>
-      </TextFlow>
-      <TextField fx:id="sessionNameIn" onInputMethodTextChanged="#textInput" prefHeight="0.0" prefWidth="260.0" text="Session name" />
+      </HBox>
+      <TextField fx:id="sessionNameIn" prefHeight="0.0" prefWidth="260.0" text="Session name" />
       <TextFlow prefHeight="12.0" prefWidth="260.0" textAlignment="RIGHT">
          <children>
             <Text fx:id="time" strokeType="OUTSIDE" strokeWidth="0.0" text="0:00.00">
@@ -28,7 +37,7 @@
          </children>
       </TextFlow>
       <ListView fx:id="lapList" prefHeight="191.0" prefWidth="260.0" />
-      <TextArea fx:id="descriptionIn" onInputMethodTextChanged="#textInput" prefHeight="147.0" prefWidth="260.0" text="Description" />
+      <TextArea fx:id="descriptionIn" prefHeight="147.0" prefWidth="260.0" text="Description" />
       <Button fx:id="save" mnemonicParsing="false" onAction="#savePressed" prefHeight="65.0" prefWidth="260.0" style="-fx-font-size: 23;" text="SAVE" />
    </children>
    <padding>
